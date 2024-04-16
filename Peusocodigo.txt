@@ -1,0 +1,53 @@
+Algoritmo_Valor_Secret
+
+Start
+
+  Definir symbols , board , secret_row , secret_col , secret_evalue , guess , size , play_again como Variable
+  Definir SYMBOLS como const
+  Definir Random , Time , Clear_Output como Liberias
+  
+  Def main():
+     Display ("Bienvenido al juego del valor secreto.") // mensaje de inicio
+     Display ("El juego consiste en memorizar el tablero por unos segundos y luego adivinar el valor oculto.") // mensajes de inicio
+    While true: // ciclo mientras veradero
+       try:
+         size = int(input("Ingresa el tamaño del tablero (solo un número):")) // se le agrega valor a size
+         if play_again <> s: // si no se cumple se acaba el programa 
+             break
+       except evalueError:
+         Display "Por favor, ingresa un número válido para el tamaño del tablero." // si ocurre algun error mostrara este mensaje 
+  if _name_ = "_main_" :
+   main()
+
+  Def generate_board(size): 
+      symbols = ['$', '@', '#', 'a', '2', '?', 'g', '+', '5'] // lista de simbolos 
+      board = random.choice([random.randint(1,10)] + symbols)for i in range(size)] for f in range(size)] // donde se genera la board filas y columnas 
+      return board // se retorna
+
+  Def show_board(board): // imprime las filas de la board 
+      for row in board: // ciclo for 
+       Display (" ".join(str(x) if isinstance(x, int) else x for x in row)) // se ejeuctan la cadenas de enteros y que se impriman bien las filas y el join para separlos
+    
+  Def hide_value(board): // esta funcion escoge un valor en la board y lo oculta para que el usuario la descubra
+    secret_row = random.randint(0, len(board) - 1) // se escoge un valor de la fila
+    secret_col = random.randint(0, len(board[0]) - 1) // se escoge un  valor de la columna
+    secret_value = board[secret_row][secret_col] // y se ajunta en una variable 
+    board[secret_row][secret_col] = '*' // se remplaza por un alterizco
+    return secret_value, board // y se retorna
+  
+ Def play_game(size): // donde se ejucutan todas definiciones
+    board = generate_board(size)
+    show_board(board)  // Muestra el tablero completo
+    Display ("Memoriza el tablero por unos segundos...")
+    time.sleep(size)  // Se memoriza el tablero para saber cual se oculta el tiempo dependera del valor size
+    clear_output(wait=True)    // Limpia la salida
+    secret_value, hidden_board = hide_value(board)
+    show_board(hidden_board)     // Muestra el tablero con el valor oculto
+    guess = input("Adivina el valor secreto: ")
+    if str(guess) == str(secret_value):    // se evalua si lo que ingreso el usuario es cierto
+        Display ("¡Correcto!")    // si es verdadero
+    else:
+        Display ("Incorrecto, el valor era:" secret_value) // si es falso
+
+End
+

@@ -1,0 +1,29 @@
+Problema: Programa que simule un juego de buscar un valor dentro de una matrix hecha por datos ingresados por el usuario
+
+Utlizaremos varias funciones que crearemos nosotros mismos
+
+Variables: board , secret_row , secret_col , secret_evalue , guess , size , play_again
+constantes = symbols
+Liberias :
+- Random
+- Time 
+- Clear_Output
+
+Entrada(s): Tamaño del la board.
+
+Salida(s): Board , valor escondido , inputs para que el usuario diga cual fue y evaluar
+
+Recomendacion(es): board no sea tan grande para revisar que el programa funciona bien
+
+proceso(s): 
+-El programa recibe como entrada las filas y columnas (colocar un input) // seran un solo valor se multiplica por el mismo de alli se saca la matrix
+
+- Se Guardara el la variable size cual pasara por un ciclo for que tranformara los datos en listas 
+
+- Las listas pasaran por una funcion que se llama generador de board donde se formara la matrix y se utlizara random choice para repartir los datos que hay en la contante symbols
+
+- Pasara por una funcion que se encargara de imprimir los datos correctamente
+
+- Pasara por una funcion que ocultara un valor al azar y el usuario tratara de descubir cual es
+
+- Pasara por la ultima funcion que dara un tiempo al usuario para ver los datos refeljados y la duravilidad dependera del primer dato ingresado se contara en segundos y si el usuario adivina cual es gana y si pierde el usuario tendra la oportunida de reperitir el juego las veces que quiera y si gana tambien.
